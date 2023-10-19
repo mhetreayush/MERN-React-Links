@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Task Number</th>
+            <th>Github Link</th>
+            <th>Deployed Link</th>
+        </tr>
+    </table>
+
+    <script>
+        const table = document.querySelector('table');
+        const toAdd = (index, link) => (`
+            <tr>
+                <td>Task ${index+1}</td>
+                <td><a href="${link.github}" target="_blank">Click here</a></td>
+                <td><a href="${link.deployed}" target="_blank">Click here</a></td>
+            </tr>
+        `);
+
+        const taskLinks = [
+                {
+                    github: "https://github.com/mhetreayush/MERN-React-Task-1",
+                    deployed: "https://mern-react-task-1-blush.vercel.app/"
+                },
+                {
+                    github:"",
+                    deployed:""
+                },
+                {
+                    github:"https://github.com/mhetreayush/MERN-React-Task-3",
+                    deployed:"https://mern-react-task-3-sigma.vercel.app/"
+                },
+                {
+                    github:"https://github.com/mhetreayush/MERN-React-Task-4",
+                    deployed:"https://mern-react-task-4-eight.vercel.app/"
+                },
+                {
+                    github:"https://github.com/mhetreayush/MERN-React-Task-5",
+                    deployed:"https://mern-react-task-5-gamma.vercel.app/"
+                },
+                {
+                    github:"https://github.com/mhetreayush/personal-website",
+                    deployed:"https://ayushm.vercel.app"
+                },
+        ]
+        taskLinks.map((links, idx) => (
+            table.innerHTML += toAdd(idx, links)
+        ))
+    </script>
+</body>
+
+</html>
